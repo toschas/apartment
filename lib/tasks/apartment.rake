@@ -21,7 +21,9 @@ apartment_namespace = namespace :apartment do
     tenants.each do |tenant|
       begin
         puts("Migrating #{tenant} tenant")
-        Apartment::Migrator.migrate tenant
+        Apartment::Tenant.switch(tenant) do
+          Apartment::Migrator.migrate tenant
+        end
       rescue Apartment::TenantNotFound => e
         puts e.message
       end
