@@ -25,6 +25,8 @@ Apartment.configure do |config|
   #
   config.tenant_names = lambda { ToDo_Tenant_Or_User_Model.pluck :database }
 
+  config.import_db_schema_after_create = true
+
   #
   # ==> PostgreSQL only options
 
