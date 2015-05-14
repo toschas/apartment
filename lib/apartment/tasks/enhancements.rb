@@ -33,4 +33,4 @@ module Apartment
   end
 end
 
-Apartment::RakeTaskEnhancer.enhance!
+# Apartment::RakeTaskEnhancer.enhance!
