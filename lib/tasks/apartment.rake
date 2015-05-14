@@ -34,7 +34,7 @@ apartment_namespace = namespace :apartment do
   task :seed do
     warn_if_tenants_empty
 
-    tenants.each do |tenant|
+    Apartment.tenant_names.each do |tenant|
       begin
         puts("Seeding #{tenant} tenant")
         Apartment::Tenant.switch(tenant) do
